@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  
+  --color-bg: #FFFFFF;
+  --color-bg-warm: #FAF8F5;
+  --color-bg-blush: #F9EDE8;
+  --color-text: #1A1209;
+  --color-text-muted: #6B5E58;
+  --color-accent: #C4634A;
+  --color-accent-light: #E8856A;
+  --color-border: #EDE8E3;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+body {
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Product card hover image swap */
+.product-img-primary {
+  transition: opacity 0.4s ease;
+  opacity: 1;
+}
+.product-img-secondary {
+  transition: opacity 0.4s ease;
+  opacity: 0;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.product-card:hover .product-img-primary {
+  opacity: 0;
+}
+.product-card:hover .product-img-secondary {
+  opacity: 1;
+}
